@@ -6,7 +6,6 @@ import sys
 import requests
 from print_in_colors import prRed, prGreen, prYellow, prLightPurple, prPurple, prCyan, prLightGray, prBlack
 
-
 class CricInfo():
 
 
@@ -23,7 +22,7 @@ class CricInfo():
 
 
     def get_matches_info(self):
-        url = "http://mapps.cricbuzz.com/cbzios/match/livematches"
+        url = "https://mapps.cricbuzz.com/cbzios/match/livematches"
         crawled_content = self.crawl_url(url)
         self.matches = crawled_content['matches']
         
