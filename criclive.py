@@ -14,6 +14,9 @@ class CricInfo():
 
 
     def crawl_url(self, url):
+        '''
+        work with url.
+        '''
         try:
             r = requests.get(url).json()
             return r
@@ -22,6 +25,9 @@ class CricInfo():
 
 
     def get_matches_info(self):
+        '''
+        This function get matches information.
+        '''
         url = "https://mapps.cricbuzz.com/cbzios/match/livematches"
         crawled_content = self.crawl_url(url)
         self.matches = crawled_content['matches']
@@ -32,6 +38,9 @@ class CricInfo():
 
 
     def generate_matches_list(self):
+        '''
+        This function genrate match list.
+        '''
         self.get_matches_info()
         self.match_list = []
         for match in self.matches:
@@ -43,11 +52,17 @@ class CricInfo():
 
 
     def get_match_list(self):
+        '''
+        This function get match list.
+        '''
         self.generate_matches_list()
         return self.match_list
 
 
     def display_match_list(self):
+        '''
+        This function display match list.
+        '''
         self.get_match_list()
         print("")
         for i, match in enumerate(self.match_list):
@@ -64,6 +79,9 @@ class CricInfo():
 
 
     def show_options_menu(self):
+        '''
+        This function show Menue.
+        '''
         self.display_match_list()
         choice = raw_input("Select a match number : ")
         try:
@@ -79,6 +97,9 @@ class CricInfo():
 
 
     def get_score_by_match(self, match):
+        '''
+        This function get score by match.
+        '''
         
         def use_inning_id_as_key(inning):
             try:
@@ -128,6 +149,9 @@ class CricInfo():
 
 
     def display_score(self, score, status):
+        '''
+        This function display score.
+        '''
 
         print("")
 
@@ -154,6 +178,9 @@ class CricInfo():
 
 
     def open_score_of_choice(self, choice_id=None):
+        '''
+        Open score of choice.
+        '''
 
         if choice_id is None:
             print("\n Wrong choice!")
