@@ -1,4 +1,4 @@
-# CricLive
+# CricLive Score
 
 ## Setup instructions
 
